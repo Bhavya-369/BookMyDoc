@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Doctor Appointment UI</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <div class="navbar">
+    <div class="nav-left">Doctor Booking App</div>
+    <div class="nav-right">
+      <button id="loginBtn" onclick="showLoginModal()">Login</button>
+      <button id="signupBtn" onclick="showSignupModal()">Signup</button>
+      <button id="logoutBtn" style="display:none;" onclick="logout()">Logout</button> <!-- New Logout button -->
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="left-panel">
+      <h3>Find Doctors</h3>
+      <select id="citySelect">
+        <option value="">--Select City--</option>
+        <option value="hyderabad">Hyderabad</option>
+        <option value="mumbai">Mumbai</option>
+        <option value="delhi">Delhi</option>
+      </select>
+    </div>
+    <div class="right-panel" id="doctorList">
+      <h2>Select a city to see doctors</h2>
+    </div>
+  </div>
+
+ 
+<!-- Login Modal -->
+<div class="modal fade" id="loginModal" tabindex="-1" aria-labelledby="loginModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="loginModalLabel">Sign In</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <!-- Login Form -->
+        <form id="loginFormSubmit" method="POST" onsubmit="handleLogin(event)">
+          <div class="mb-3">
+            <label for="username" class="form-label">Username</label>
+            <input type="text" id="username" name="username" class="form-control" required>
+          </div>
+          <div class="mb-3">
+            <label for="password" class="form-label">Password</label>
+            <input type="password" id="password" name="password" class="form-control" required>
+          </div>
+          <button type="submit" class="btn btn-primary">Login</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+ <!-- Signup Modal -->
+<div class="modal fade" id="signupModal" tabindex="-1" aria-labelledby="signupModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="signupModalLabel">Sign Up</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <!-- Signup Form -->
+        <form id="signupFormSubmit" method="POST" onsubmit="handleSignup(event)">
+          <div class="mb-3">
+            <label for="signupUsername" class="form-label">Username</label>
+            <input type="text" id="signupUsername" name="username" class="form-control" required>
+          </div>
+          <div class="mb-3">
+            <label for="signupEmail" class="form-label">Email</label>
+            <input type="email" id="signupEmail" name="email" class="form-control" required>
+          </div>
+          <div class="mb-3">
+            <label for="signupPassword" class="form-label">Password</label>
+            <input type="password" id="signupPassword" name="password" class="form-control" required>
+          </div>
+          <button type="submit" class="btn btn-primary">Sign Up</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+  <!-- Booking Modal -->
+  <div class="modal fade" id="bookingModal" tabindex="-1" aria-labelledby="bookingModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="bookingModalLabel">Book Appointment</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <form id="bookingForm" onsubmit="submitBooking(event)">
+            <div class="mb-3">
+              <label for="appointmentDate" class="form-label">Select Date</label>
+              <input type="date" id="appointmentDate" name="appointmentDate" class="form-control" required>
+            </div>
+            <div class="mb-3">
+              <label for="timeslot" class="form-label">Select Time Slot</label>
+              <select id="timeslot" name="timeslot" class="form-control" required>
+                <option value="10:00 AM">10:00 AM</option>
+                <option value="11:00 AM">11:00 AM</option>
+                <option value="02:00 PM">02:00 PM</option>
+                <option value="04:00 PM">04:00 PM</option>
+              </select>
+            </div>
+            <button type="submit" class="btn btn-primary">Book Appointment</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="app.js"></script> <!-- External JS file -->
+</body>
+</html>

@@ -1,0 +1,154 @@
+body {
+  margin: 0;
+  font-family: 'Arial', sans-serif;
+  background: #f4f6f8;
+}
+
+/* Navbar */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #007bff;
+  padding: 10px 20px;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  color: white;
+  z-index: 1000;
+}
+
+.nav-left {
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.nav-right button {
+  margin-left: 10px;
+  background: white;
+  color: #007bff;
+  border: none;
+  padding: 8px 12px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.container {
+  display: flex;
+  margin-top: 70px;
+  padding: 20px;
+}
+
+.left-panel {
+  width: 25%;
+}
+
+.right-panel {
+  width: 75%;
+  padding-left: 20px;
+}
+
+select {
+  padding: 8px;
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+.doctor-card {
+  background: white;
+  padding: 15px;
+  margin-bottom: 15px;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  transition: box-shadow 0.3s ease;
+}
+
+.doctor-card:hover {
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+.doctor-info {
+  display: flex;
+  align-items: center;
+}
+
+.doctor-info img {
+  border-radius: 50%;
+  width: 60px;
+  height: 60px;
+  margin-right: 15px;
+}
+
+.doctor-details {
+  line-height: 1.4;
+}
+
+.book-btn {
+  background: #28a745;
+  color: white;
+  border: none;
+  padding: 8px 12px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.book-btn:hover {
+  background: #218838;
+}
+
+.modal-content {
+  padding: 20px;
+  border-radius: 8px;
+}
+
+.calendar {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 20px;
+}
+
+.calendar input {
+  padding: 10px;
+  font-size: 16px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  width: 100%;
+}
+
+.slots-container {
+  margin-top: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+}
+
+.slot {
+  background: #e2e6ea;
+  padding: 10px 15px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.slot:hover {
+  background: #007bff;
+  color: white;
+}
+
+.modal-backdrop {
+  z-index: 1040 !important;
+}
+
+/* Added for confirmation */
+.confirmation {
+  margin-top: 20px;
+  padding: 10px;
+  background-color: #d4edda;
+  border: 1px solid #c3e6cb;
+  border-radius: 5px;
+}
